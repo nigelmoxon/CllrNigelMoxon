@@ -1,125 +1,558 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cllr Nigel Moxon – District Councillor for Ling Forest Ward</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5faff;
-      color: #333;
-    }
-    header {
-      background-color: #00539f;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      margin: 0.5rem 0;
-      font-size: 1.2rem;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    section {
-      background-color: white;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 83, 159, 0.1);
-    }
-    h2 {
-      color: #00539f;
-    }
-    a {
-      color: #00539f;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .contact p, .useful-links p {
-      margin: 0.5rem 0;
-    }
-    iframe {
-      width: 100%;
-      border: none;
-    }
-    footer {
-      background-color: #002b4f;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Councillor Nigel Moxon - Ling Forest Ward, Mansfield</title>
+    <style>
+        :root {
+            --conservative-blue: #0087DC;
+            --conservative-red: #E4003B;
+            --white: #FFFFFF;
+            --light-gray: #F8F8F8;
+            --medium-gray: #E0E0E0;
+            --dark-gray: #333333;
+            --text-color: #444444;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+        
+        .logo-text p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        nav ul li a:hover {
+            color: var(--conservative-blue);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: var(--light-gray);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--text-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--conservative-blue);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #0073C1;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--conservative-red);
+        }
+        
+        /* About Section */
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-text {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .about-text h3 {
+            font-size: 1.5rem;
+            color: var(--dark-gray);
+            margin-top: 0;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--conservative-blue);
+            padding-left: 20px;
+            margin: 25px 0;
+            font-style: italic;
+            color: var(--dark-gray);
+        }
+        
+        /* Priorities Section */
+        .priorities {
+            background-color: var(--light-gray);
+            padding: 60px 0;
+            margin: 40px 0;
+            border-top: 1px solid var(--medium-gray);
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .priority-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .priority-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .priority-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .priority-card h3 {
+            color: var(--conservative-blue);
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+        
+        /* Social Media Feeds Section */
+        .social-feeds {
+            margin: 60px 0;
+        }
+        
+        .feed-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+        
+        .feed-box {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 20px;
+            min-height: 500px;
+        }
+        
+        .feed-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .feed-title i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: var(--conservative-blue);
+        }
+        
+        .feed-title h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--light-gray);
+            padding: 60px 0;
+            border-top: 1px solid var(--medium-gray);
+        }
+        
+        .contact-box {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-box h2 {
+            margin-top: 0;
+            color: var(--dark-gray);
+            font-size: 1.8rem;
+        }
+        
+        .contact-info {
+            margin: 25px 0;
+        }
+        
+        .contact-info p {
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info a {
+            color: var(--conservative-blue);
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            margin: 0 15px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+            display: inline-block;
+        }
+        
+        .social-links a:hover {
+            color: var(--conservative-red);
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-top: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .about, .about-text, .about-image {
+                flex: 100%;
+            }
+            
+            .about-image {
+                margin-bottom: 30px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .feed-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<header>
-  <h1>COUNCILLOR NIGEL MOXON</h1>
-  <p>District Councillor for Ling Forest Ward on Mansfield District Council</p>
-  <p>Leader of the Conservative Group</p>
-</header>
-
-<div class="container">
-
-  <section class="info">
-    <h2>About Me</h2>
-    <p>Hello, I’m Councillor Nigel Moxon, your elected representative for Ling Forest Ward on Mansfield District Council. I proudly serve as a Conservative Party councillor and as the Leader of the Conservative Group on the council.</p>
-    <p>I’m here to represent your views, support the community, and work towards improving local services and opportunities in our area.</p>
-    <div class="contact">
-      <p><strong>Email:</strong> <a href="mailto:nmoxon@mansfield.gov.uk">nmoxon@mansfield.gov.uk</a></p>
-      <p><strong>Phone:</strong> <a href="tel:+447869151058">07869 151058</a></p>
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <img src="Conservatives_logo.svg" alt="Conservative Party Logo">
+                    <div class="logo-text">
+                        <h1>Nigel Moxon</h1>
+                        <p>District Councillor for Ling Forest Ward</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#priorities">Priorities</a></li>
+                        <li><a href="#social">Social Media</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Working Hard for Ling Forest Ward</h2>
+            <p>Your Conservative representative on Mansfield District Council, fighting for our community's interests.</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+    </section>
+    
+    <div class="main-content">
+        <div class="container">
+            <section id="about">
+                <h2 class="section-title">About Me</h2>
+                <div class="about">
+                    <div class="about-image">
+                        <img src="nigel-moxon.jpg" alt="Councillor Nigel Moxon">
+                    </div>
+                    <div class="about-text">
+                        <h3>Your Local Conservative Councillor</h3>
+                        <p>I am proud to serve as the District Councillor for Ling Forest Ward on Mansfield District Council. As a member of the Conservative Party, I believe in empowering local communities, supporting businesses, and ensuring value for money in local services.</p>
+                        <p>Having lived in the area for many years, I understand the unique challenges and opportunities we face in Ling Forest Ward. My background has given me the skills to effectively represent residents and work collaboratively to improve our area.</p>
+                        <blockquote>
+                            "I'm committed to listening to residents and fighting for Ling Forest's interests on Mansfield District Council."
+                        </blockquote>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="priorities" id="priorities">
+                <h2 class="section-title">My Priorities</h2>
+                <div class="priority-grid">
+                    <div class="priority-card">
+                        <h3>Safer Streets</h3>
+                        <p>Working with local police to reduce anti-social behavior and improve street lighting in problem areas.</p>
+                    </div>
+                    <div class="priority-card">
+                        <h3>Better Roads</h3>
+                        <p>Campaigning for more investment in road repairs and pavement improvements across the ward.</p>
+                    </div>
+                    <div class="priority-card">
+                        <h3>Supporting Local Businesses</h3>
+                        <p>Championing our high streets and helping local enterprises recover and thrive.</p>
+                    </div>
+                    <div class="priority-card">
+                        <h3>Cleaner Environment</h3>
+                        <p>Tackling litter and fly-tipping while protecting our green spaces.</p>
+                    </div>
+                    <div class="priority-card">
+                        <h3>Community Facilities</h3>
+                        <p>Fighting for better maintenance and investment in parks, playgrounds, and community centers.</p>
+                    </div>
+                    <div class="priority-card">
+                        <h3>Value for Money</h3>
+                        <p>Ensuring council tax is spent wisely on services that matter most to residents.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="social-feeds" id="social">
+                <h2 class="section-title">Social Media Updates</h2>
+                <div class="feed-container">
+                    <div class="feed-box">
+                        <div class="feed-title">
+                            <i class="fab fa-facebook-f"></i>
+                            <h3>Facebook Updates</h3>
+                        </div>
+                        <!-- Facebook Page Plugin -->
+                        <div class="fb-page" 
+                             data-href="https://www.facebook.com/CllrNigelMoxon"
+                             data-tabs="timeline" 
+                             data-width="500" 
+                             data-height="500" 
+                             data-small-header="false" 
+                             data-adapt-container-width="true" 
+                             data-hide-cover="false" 
+                             data-show-facepile="true">
+                            <blockquote cite="https://www.facebook.com/CllrNigelMoxon" class="fb-xfbml-parse-ignore">
+                                <a href="https://www.facebook.com/CllrNigelMoxon">Councillor Nigel Moxon</a>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="feed-box">
+                        <div class="feed-title">
+                            <i class="fab fa-twitter"></i>
+                            <h3>Twitter Updates</h3>
+                        </div>
+                        <!-- Twitter Timeline Widget -->
+                        <a class="twitter-timeline" 
+                           href="https://twitter.com/nigelmoxon"
+                           data-height="500"
+                           data-chrome="nofooter noborders"
+                           data-tweet-limit="3">
+                           Tweets by nigelmoxon
+                        </a> 
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
-  </section>
-
-  <section class="useful-links">
-    <h2>Useful Links and Telephone Numbers</h2>
-    <p><strong>Mansfield District Council:</strong> <a href="https://www.mansfield.gov.uk" target="_blank">www.mansfield.gov.uk</a> / 01623 463 463</p>
-    <p><strong>Nottinghamshire County Council:</strong> <a href="https://www.nottinghamshire.gov.uk" target="_blank">www.nottinghamshire.gov.uk</a> / 0300 500 8080</p>
-    <p><strong>Police (Non-Emergency):</strong> 101</p>
-    <p><strong>NHS Direct:</strong> 111</p>
-    <p><strong>National Grid (Electric):</strong> 105</p>
-    <p><strong>National Grid (Gas):</strong> 0800 111 999</p>
-  </section>
-
-  <section class="social">
-    <h2>Follow Me Online</h2>
-
-    <h3>Twitter / X Feed</h3>
-    <a class="twitter-timeline" data-height="400" href="https://twitter.com/nigelmoxon?ref_src=twsrc%5Etfw">Tweets by nigelmoxon</a>
+    
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-box">
+                <h2>Contact Me</h2>
+                <p>I'm always happy to hear from residents about local issues or concerns. Please don't hesitate to get in touch.</p>
+                <div class="contact-info">
+                    <p><strong>Phone:</strong> 07869 151058</p>
+                    <p><strong>Email:</strong> <a href="mailto:nmoxon@mansfield.gov.uk">nmoxon@mansfield.gov.uk</a></p>
+                </div>
+                <p>For council services, please visit the <a href="https://www.mansfield.gov.uk" target="_blank">Mansfield District Council website</a>.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.facebook.com/CllrNigelMoxon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/nigelmoxon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#priorities">Priorities</a>
+                <a href="#social">Social Media</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>&copy; 2025 Nigel Moxon. All rights reserved.</p>
+            <p class="disclaimer">Promoted by and on behalf of Nigel Moxon, both at 5 Kilton Ave, Mansfield NG18 3GB.</p>
+        </div>
+    </footer>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0" nonce="YOUR_NONCE_VALUE"></script>
+    
+    <!-- Twitter Widgets -->
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-    <h3>Facebook Page</h3>
-    <iframe 
-      src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCllrNigelMoxon&tabs=timeline&width=500&height=400&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
-      width="500" 
-      height="400" 
-      allowfullscreen="true">
-    </iframe>
-  </section>
-
-</div>
-
-<footer>
-  <p>Promoted by and on behalf of Nigel Moxon of 5 Kilton Avenue, Mansfield, NG18 3GB</p>
-</footer>
-
-</body>
-</html>
-
-
 </body>
 </html>
