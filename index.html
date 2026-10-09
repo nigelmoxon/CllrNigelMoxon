@@ -1,558 +1,563 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Councillor Nigel Moxon - Ling Forest Ward, Mansfield</title>
-    <style>
-        :root {
-            --conservative-blue: #0087DC;
-            --conservative-red: #E4003B;
-            --white: #FFFFFF;
-            --light-gray: #F8F8F8;
-            --medium-gray: #E0E0E0;
-            --dark-gray: #333333;
-            --text-color: #444444;
-        }
-        
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-            line-height: 1.6;
-            font-size: 16px;
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo img {
-            height: 50px;
-            margin-right: 15px;
-        }
-        
-        .logo-text h1 {
-            margin: 0;
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--dark-gray);
-        }
-        
-        .logo-text p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: var(--text-color);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        nav ul li {
-            margin-left: 25px;
-        }
-        
-        nav ul li a {
-            color: var(--dark-gray);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        nav ul li a:hover {
-            color: var(--conservative-blue);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background-color: var(--light-gray);
-            padding: 60px 0;
-            text-align: center;
-            border-bottom: 1px solid var(--medium-gray);
-        }
-        
-        .hero h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            color: var(--dark-gray);
-            font-weight: 600;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: var(--text-color);
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--conservative-blue);
-            color: var(--white);
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: background-color 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: #0073C1;
-        }
-        
-        /* Main Content */
-        .main-content {
-            padding: 60px 0;
-        }
-        
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--dark-gray);
-            margin-bottom: 30px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: var(--conservative-red);
-        }
-        
-        /* About Section */
-        .about {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 60px;
-            align-items: center;
-        }
-        
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-text {
-            flex: 2;
-            min-width: 300px;
-        }
-        
-        .about-text h3 {
-            font-size: 1.5rem;
-            color: var(--dark-gray);
-            margin-top: 0;
-        }
-        
-        blockquote {
-            border-left: 4px solid var(--conservative-blue);
-            padding-left: 20px;
-            margin: 25px 0;
-            font-style: italic;
-            color: var(--dark-gray);
-        }
-        
-        /* Priorities Section */
-        .priorities {
-            background-color: var(--light-gray);
-            padding: 60px 0;
-            margin: 40px 0;
-            border-top: 1px solid var(--medium-gray);
-            border-bottom: 1px solid var(--medium-gray);
-        }
-        
-        .priority-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        
-        .priority-card {
-            background-color: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
-        }
-        
-        .priority-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .priority-card h3 {
-            color: var(--conservative-blue);
-            margin-top: 0;
-            font-size: 1.3rem;
-        }
-        
-        /* Social Media Feeds Section */
-        .social-feeds {
-            margin: 60px 0;
-        }
-        
-        .feed-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-        }
-        
-        .feed-box {
-            background-color: var(--light-gray);
-            border-radius: 8px;
-            padding: 20px;
-            min-height: 500px;
-        }
-        
-        .feed-title {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .feed-title i {
-            font-size: 1.5rem;
-            margin-right: 10px;
-            color: var(--conservative-blue);
-        }
-        
-        .feed-title h3 {
-            margin: 0;
-            font-size: 1.3rem;
-        }
-        
-        /* Contact Section */
-        .contact-section {
-            background-color: var(--light-gray);
-            padding: 60px 0;
-            border-top: 1px solid var(--medium-gray);
-        }
-        
-        .contact-box {
-            background-color: var(--white);
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .contact-box h2 {
-            margin-top: 0;
-            color: var(--dark-gray);
-            font-size: 1.8rem;
-        }
-        
-        .contact-info {
-            margin: 25px 0;
-        }
-        
-        .contact-info p {
-            margin: 15px 0;
-            font-size: 1.1rem;
-        }
-        
-        .contact-info a {
-            color: var(--conservative-blue);
-            text-decoration: none;
-        }
-        
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark-gray);
-            color: var(--white);
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .social-links {
-            margin: 20px 0;
-        }
-        
-        .social-links a {
-            color: var(--white);
-            margin: 0 15px;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-            display: inline-block;
-        }
-        
-        .social-links a:hover {
-            color: var(--conservative-red);
-        }
-        
-        .footer-links {
-            margin: 20px 0;
-        }
-        
-        .footer-links a {
-            color: var(--white);
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-        
-        .disclaimer {
-            font-size: 0.8rem;
-            color: #aaa;
-            margin-top: 30px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul {
-                margin-top: 20px;
-                justify-content: center;
-            }
-            
-            nav ul li {
-                margin: 0 10px;
-            }
-            
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .about, .about-text, .about-image {
-                flex: 100%;
-            }
-            
-            .about-image {
-                margin-bottom: 30px;
-            }
-            
-            .section-title {
-                font-size: 1.5rem;
-            }
-            
-            .feed-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cllr Nigel Moxon</title>
+<meta name="description" content="Cllr Nigel Moxon, Conservative councillor for Ling Forest Ward on Mansfield District Council. Mansfield born and bred, delivering for local residents.">
+<meta property="og:title" content="Cllr Nigel Moxon | Delivering for Ling Forest">
+<meta property="og:description" content="Your Conservative councillor for Ling Forest Ward on Mansfield District Council.">
+<meta property="og:image" content="https://nigelmoxon.uk/images/kemi-badenoch-2025.jpg">
+<meta property="og:url" content="https://nigelmoxon.uk/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+/* Layout: campaign-leaflet. Sign-blue headline band up top, then plain sections that read like a well-made leaflet: story, priorities, record, photos, contact. */
+:root{
+  --bg:#f4f7fb; --surface:#ffffff; --ink:#0c1d36; --muted:#4b5c74; --line:#d5dde8;
+  --blue:#0087dc; --blue-ink:#0067a8; --navy:#0b2a55; --on-navy:#ffffff; --on-navy-soft:#c4d6ee;
+  --forest:#2e6a4d; --chip:#e6eef8;
+  --display:"Archivo","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
+  --r:10px; --wrap:1160px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#09131f; --surface:#0f1c2e; --ink:#e7eef7; --muted:#a2b3c8; --line:#22354f;
+  --blue:#3aa8f0; --blue-ink:#7cc4f5; --navy:#0a2347; --on-navy:#ffffff; --on-navy-soft:#b4c8e4;
+  --forest:#6fbf96; --chip:#17283f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#09131f; --surface:#0f1c2e; --ink:#e7eef7; --muted:#a2b3c8; --line:#22354f;
+  --blue:#3aa8f0; --blue-ink:#7cc4f5; --navy:#0a2347; --on-navy:#ffffff; --on-navy-soft:#b4c8e4;
+  --forest:#6fbf96; --chip:#17283f; color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--blue-ink);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+.eyebrow{font:700 .8rem/1.2 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--blue-ink)}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;min-height:64px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);padding-block:8px}
+.brand img{height:34px;width:auto}
+.brand b{font:800 1.15rem/1 var(--display);font-stretch:85%;letter-spacing:.01em}
+.brand small{display:block;font:600 .74rem/1.3 var(--body);color:var(--muted);letter-spacing:.02em}
+.nav{margin-left:auto;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;max-width:100%}
+.nav::-webkit-scrollbar{display:none}
+.nav a{white-space:nowrap;text-decoration:none;color:var(--ink);font:600 .95rem/1 var(--body);padding:10px 12px;border-radius:999px}
+.nav a:hover{background:var(--chip)}
+.nav a.cta{background:#0074bf;color:#fff}
+.nav a.cta:hover{background:#005c97}
+@media (max-width:760px){.top .wrap{gap:0}.nav{margin-left:0;width:100%;padding-bottom:8px}}
+
+/* Hero */
+.hero{background:var(--navy);color:var(--on-navy);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;padding-block:clamp(36px,6vw,72px)}
+.hero .eyebrow{color:var(--on-navy-soft)}
+.hero h1{font-size:clamp(3rem,8.4vw,6.4rem);font-weight:900;font-stretch:72%;text-transform:uppercase;letter-spacing:-.005em;line-height:.9;margin-top:14px}
+.hero h1 span{display:block;color:#6cc4ff}
+.hero .lede{margin-top:22px;font-size:1.2rem;line-height:1.55;color:var(--on-navy-soft);max-width:34ch}
+.hero .lede strong{color:var(--on-navy);font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:700 1rem/1 var(--body);padding:14px 20px;border-radius:999px;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn-primary{background:#0074bf;color:#fff}
+.btn-primary:hover{background:#005c97}
+.btn-ghost{border-color:rgba(255,255,255,.45);color:#fff}
+.btn-ghost:hover{border-color:#fff}
+.hero figure{margin:0;position:relative}
+.hero figure img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.hero figcaption{margin-top:10px;font-size:.88rem;color:var(--on-navy-soft)}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero .lede{max-width:none}}
+
+/* Polling strip */
+.poll{background:#0067a8;color:#fff}
+.poll .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;padding-block:14px}
+.poll p{font:700 1rem/1.3 var(--display);letter-spacing:.02em}
+.poll p span{font-weight:500;opacity:.9}
+.poll a{color:#fff;font-weight:700;margin-left:auto}
+@media (max-width:640px){.poll a{margin-left:0}}
+
+/* Sections */
+section{padding-block:clamp(56px,8vw,96px)}
+section+section{border-top:1px solid var(--line)}
+.head{display:grid;gap:12px;max-width:62ch;margin-bottom:clamp(28px,4vw,44px)}
+.head h2{font-size:clamp(2.1rem,4.6vw,3.2rem);font-weight:850;font-stretch:80%}
+.head p{color:var(--muted);font-size:1.1rem}
+
+/* Delivered stories */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,48px);align-items:center}
+.story+.story{margin-top:clamp(40px,6vw,64px)}
+.story:nth-of-type(even) .story-img{order:2}
+.story-img img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+.story-img figcaption{font-size:.88rem;color:var(--muted);margin-top:8px}
+.story-img{margin:0}
+.story-text{display:grid;gap:14px;min-width:0}
+.story-text h3{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:800;font-stretch:85%}
+.tag{justify-self:start;display:inline-flex;align-items:center;gap:6px;font:700 .78rem/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--forest);background:color-mix(in srgb,var(--forest) 12%,transparent);padding:7px 10px;border-radius:999px}
+.tag::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.story-text p{max-width:58ch}
+.press{font-weight:600}
+@media (max-width:760px){.story{grid-template-columns:1fr}.story:nth-of-type(even) .story-img{order:0}}
+
+/* Groups */
+.groups{margin-top:clamp(48px,7vw,80px);background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3.5vw,36px)}
+.groups h3{font-size:clamp(1.5rem,2.8vw,1.9rem);font-weight:800;font-stretch:85%}
+.groups>p{color:var(--muted);margin-top:8px;max-width:62ch}
+.grant-list{list-style:none;padding:0;margin:24px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.grant-list li{display:grid;gap:10px;align-content:start}
+.grant-list img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:8px}
+.amount{font:850 1.9rem/1 var(--display);font-stretch:80%;color:var(--blue-ink);font-variant-numeric:tabular-nums}
+.grant-list b{font-size:1.05rem}
+.grant-list span{color:var(--muted);font-size:.98rem}
+@media (max-width:820px){.grant-list{grid-template-columns:1fr}}
+
+/* Priorities */
+.prio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.prio div{background:var(--surface);padding:24px;display:grid;gap:8px;align-content:start}
+.prio h3{font-size:1.35rem;font-weight:800;font-stretch:88%}
+.prio p{color:var(--muted)}
+@media (max-width:900px){.prio{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.prio{grid-template-columns:1fr}}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+.strip figure{margin:0}
+.strip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px}
+.strip figcaption{font-size:.88rem;color:var(--muted);margin-top:6px}
+@media (max-width:700px){.strip{grid-template-columns:1fr}}
+
+/* About */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:start}
+.about-text{display:grid;gap:16px;min-width:0}
+.about-text p{max-width:60ch}
+.about-text .big{font-size:1.25rem;line-height:1.5}
+.about-fig{display:grid;gap:10px;margin:0}
+.about-fig img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+.about-fig figcaption{font-size:.88rem;color:var(--muted)}
+@media (max-width:820px){.about{grid-template-columns:1fr}}
+.record{margin-top:clamp(40px,6vw,64px);display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,64px)}
+.record h3{font-size:1.6rem;font-weight:800;font-stretch:85%}
+.record>div:first-child p{color:var(--muted);margin-top:10px}
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--line);display:grid;gap:22px}
+.timeline li{position:relative;padding-left:22px;display:grid;gap:2px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--blue)}
+.timeline li.now::before{background:var(--blue)}
+.timeline time{font:700 .82rem/1.2 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--blue-ink);font-variant-numeric:tabular-nums}
+.timeline b{font-size:1.08rem}
+.timeline span{color:var(--muted)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.pair figure{margin:0}
+.pair img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px}
+.pair figcaption{font-size:.88rem;color:var(--muted);margin-top:6px}
+@media (max-width:820px){.record{grid-template-columns:1fr}}
+@media (max-width:560px){.pair{grid-template-columns:1fr}}
+
+/* Gallery */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.filters button{font:600 .95rem/1 var(--body);padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.grid .feat{grid-column:span 2;grid-row:span 2}
+.grid.filtered .feat{grid-column:auto;grid-row:auto}
+.grid button{all:unset;cursor:pointer;display:grid;gap:8px;align-content:start;border-radius:8px}
+.grid button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;transition:transform .25s ease,filter .25s}
+.grid button:hover img{transform:scale(1.015);filter:brightness(1.05)}
+.grid span{font-size:.92rem;color:var(--muted);line-height:1.35}
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);width:100%;color:#fff}
+dialog.lb::backdrop{background:rgba(5,12,24,.88)}
+.lb figure{margin:0;display:grid;gap:12px}
+.lb img{width:100%;max-height:78vh;object-fit:contain;border-radius:8px;background:#000}
+.lb figcaption{font-size:1rem;line-height:1.5;color:#e6eef8;max-width:80ch}
+.lb-bar{display:flex;gap:8px;justify-content:flex-end;margin-bottom:10px}
+.lb-bar button{font:700 .95rem/1 var(--body);background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:10px 14px;cursor:pointer}
+.lb-bar button:hover{background:rgba(255,255,255,.22)}
+
+/* News */
+.feeds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.feed{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:14px;align-content:start;min-width:0}
+.feed h3{font-size:1.3rem;font-weight:800;font-stretch:88%}
+.feed iframe{width:100%;max-width:500px;height:620px;border:0;border-radius:8px;background:var(--chip)}
+.feed .follow{justify-self:start}
+.feed .note{color:var(--muted);font-size:.95rem}
+.btn-line{border-color:var(--line);color:var(--ink);background:var(--bg)}
+.btn-line:hover{border-color:var(--blue)}
+@media (max-width:820px){.feeds{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:start}
+.contact-card{background:var(--navy);color:var(--on-navy);border-radius:var(--r);padding:clamp(22px,3.5vw,36px);display:grid;gap:18px}
+.contact-card dl{margin:0;display:grid;gap:16px}
+.contact-card dt{font:700 .78rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--on-navy-soft)}
+.contact-card dd{margin:6px 0 0;font:700 clamp(1.25rem,2.6vw,1.6rem)/1.2 var(--display);font-stretch:90%;overflow-wrap:anywhere}
+.contact-card a{color:#fff}
+.contact ul{margin:14px 0 0;padding-left:1.1em;color:var(--muted);display:grid;gap:6px}
+@media (max-width:820px){.contact{grid-template-columns:1fr}}
+
+/* Conservative band */
+.tory{background:var(--navy);color:var(--on-navy);border-top:6px solid #0087dc}
+.tory .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;padding-block:clamp(28px,4vw,40px)}
+.tory img{height:56px;width:auto;background:#fff;padding:8px 12px;border-radius:8px}
+.tory .wrap>div{flex:1 1 320px;min-width:0;display:grid;gap:6px}
+.tory-h{font:900 clamp(1.6rem,3.4vw,2.2rem)/1 var(--display);font-stretch:75%;text-transform:uppercase;letter-spacing:.01em}
+.tory p:not(.tory-h){color:var(--on-navy-soft);max-width:56ch}
+.tory-btn{background:#fff;color:#0b2a55}
+.tory-btn:hover{background:#dcebfa}
+.foot-logo{height:40px;width:auto}
+/* Footer */
+footer{background:var(--surface);border-top:1px solid var(--line);padding-block:32px;font-size:.92rem;color:var(--muted)}
+footer .wrap{display:grid;gap:10px}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 18px}
+.imprint{font-size:.85rem}
+</style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-container">
-                <div class="logo">
-                    <img src="Conservatives_logo.svg" alt="Conservative Party Logo">
-                    <div class="logo-text">
-                        <h1>Nigel Moxon</h1>
-                        <p>District Councillor for Ling Forest Ward</p>
-                    </div>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#priorities">Priorities</a></li>
-                        <li><a href="#social">Social Media</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-    
-    <section class="hero" id="home">
-        <div class="container">
-            <h2>Working Hard for Ling Forest Ward</h2>
-            <p>Your Conservative representative on Mansfield District Council, fighting for our community's interests.</p>
-            <a href="#contact" class="btn">Get in Touch</a>
-        </div>
-    </section>
-    
-    <div class="main-content">
-        <div class="container">
-            <section id="about">
-                <h2 class="section-title">About Me</h2>
-                <div class="about">
-                    <div class="about-image">
-                        <img src="nigel-moxon.jpg" alt="Councillor Nigel Moxon">
-                    </div>
-                    <div class="about-text">
-                        <h3>Your Local Conservative Councillor</h3>
-                        <p>I am proud to serve as the District Councillor for Ling Forest Ward on Mansfield District Council. As a member of the Conservative Party, I believe in empowering local communities, supporting businesses, and ensuring value for money in local services.</p>
-                        <p>Having lived in the area for many years, I understand the unique challenges and opportunities we face in Ling Forest Ward. My background has given me the skills to effectively represent residents and work collaboratively to improve our area.</p>
-                        <blockquote>
-                            "I'm committed to listening to residents and fighting for Ling Forest's interests on Mansfield District Council."
-                        </blockquote>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="priorities" id="priorities">
-                <h2 class="section-title">My Priorities</h2>
-                <div class="priority-grid">
-                    <div class="priority-card">
-                        <h3>Safer Streets</h3>
-                        <p>Working with local police to reduce anti-social behavior and improve street lighting in problem areas.</p>
-                    </div>
-                    <div class="priority-card">
-                        <h3>Better Roads</h3>
-                        <p>Campaigning for more investment in road repairs and pavement improvements across the ward.</p>
-                    </div>
-                    <div class="priority-card">
-                        <h3>Supporting Local Businesses</h3>
-                        <p>Championing our high streets and helping local enterprises recover and thrive.</p>
-                    </div>
-                    <div class="priority-card">
-                        <h3>Cleaner Environment</h3>
-                        <p>Tackling litter and fly-tipping while protecting our green spaces.</p>
-                    </div>
-                    <div class="priority-card">
-                        <h3>Community Facilities</h3>
-                        <p>Fighting for better maintenance and investment in parks, playgrounds, and community centers.</p>
-                    </div>
-                    <div class="priority-card">
-                        <h3>Value for Money</h3>
-                        <p>Ensuring council tax is spent wisely on services that matter most to residents.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="social-feeds" id="social">
-                <h2 class="section-title">Social Media Updates</h2>
-                <div class="feed-container">
-                    <div class="feed-box">
-                        <div class="feed-title">
-                            <i class="fab fa-facebook-f"></i>
-                            <h3>Facebook Updates</h3>
-                        </div>
-                        <!-- Facebook Page Plugin -->
-                        <div class="fb-page" 
-                             data-href="https://www.facebook.com/CllrNigelMoxon"
-                             data-tabs="timeline" 
-                             data-width="500" 
-                             data-height="500" 
-                             data-small-header="false" 
-                             data-adapt-container-width="true" 
-                             data-hide-cover="false" 
-                             data-show-facepile="true">
-                            <blockquote cite="https://www.facebook.com/CllrNigelMoxon" class="fb-xfbml-parse-ignore">
-                                <a href="https://www.facebook.com/CllrNigelMoxon">Councillor Nigel Moxon</a>
-                            </blockquote>
-                        </div>
-                    </div>
-                    <div class="feed-box">
-                        <div class="feed-title">
-                            <i class="fab fa-twitter"></i>
-                            <h3>Twitter Updates</h3>
-                        </div>
-                        <!-- Twitter Timeline Widget -->
-                        <a class="twitter-timeline" 
-                           href="https://twitter.com/nigelmoxon"
-                           data-height="500"
-                           data-chrome="nofooter noborders"
-                           data-tweet-limit="3">
-                           Tweets by nigelmoxon
-                        </a> 
-                    </div>
-                </div>
-            </section>
-        </div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Cllr Nigel Moxon, home">
+      <img src="Conservatives_logo.svg" alt="Conservatives" onerror="this.remove()">
+      <span><b>Cllr Nigel Moxon</b><small>Conservative · Ling Forest Ward</small></span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#delivered">Delivered</a>
+      <a href="#priorities">Priorities</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Photos</a>
+      <a href="#news">News</a>
+      <a class="cta" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Leader of the Opposition · Mansfield District Council</p>
+      <h1>Delivering for <span>Ling Forest</span></h1>
+      <p class="lede">I'm Nigel Moxon, your <strong>Conservative</strong> councillor for <strong>Ling Forest Ward</strong> and Leader of the Opposition on Mansfield District Council. Mansfield born and bred, an accountant by trade, and on your side when something needs fixing.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#contact">Raise an issue with me</a>
+        <a class="btn btn-ghost" href="#delivered">See what I've delivered</a>
+      </div>
     </div>
-    
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="contact-box">
-                <h2>Contact Me</h2>
-                <p>I'm always happy to hear from residents about local issues or concerns. Please don't hesitate to get in touch.</p>
-                <div class="contact-info">
-                    <p><strong>Phone:</strong> 07869 151058</p>
-                    <p><strong>Email:</strong> <a href="mailto:nmoxon@mansfield.gov.uk">nmoxon@mansfield.gov.uk</a></p>
-                </div>
-                <p>For council services, please visit the <a href="https://www.mansfield.gov.uk" target="_blank">Mansfield District Council website</a>.</p>
-            </div>
+    <figure>
+      <img src="images/kemi-badenoch-2025.jpg" alt="Nigel Moxon, Kemi Badenoch and Rob Corden holding Conservative campaign signs under a blossom tree" width="1600" height="1200" fetchpriority="high">
+      <figcaption>Out in Mansfield East with Rt Hon Kemi Badenoch MP and Rob Corden, April 2025.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div class="poll">
+  <div class="wrap">
+    <p>Vote Conservative <span>· Mansfield District Council elections, Thursday 6 May 2027</span></p>
+    <a href="https://www.gov.uk/register-to-vote" target="_blank" rel="noopener">Check you're registered to vote →</a>
+  </div>
+</div>
+
+<section id="delivered">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Results, not promises</p>
+      <h2>Delivered for residents</h2>
+      <p>When residents raise a problem, I keep pushing until it's sorted. Here are a few examples.</p>
+    </div>
+
+    <article class="story">
+      <figure class="story-img">
+        <img src="images/oak-tree-bollards-2025.jpg" alt="Nigel Moxon and Nick Marks standing beside new concrete bollards on a paved walkway" width="1600" height="1200" loading="lazy">
+        <figcaption>With residents' champion Nick Marks at the new bollards, spring 2025.</figcaption>
+      </figure>
+      <div class="story-text">
+        <span class="tag">Delivered</span>
+        <h3>Safer walkway outside Oak Tree Primary School</h3>
+        <p>Drivers, especially delivery vans, were using a pedestrian walkway on the Oak Tree Estate as a shortcut, right outside Oak Tree Primary School, which many Ling Forest families use.</p>
+        <p>After residents raised it, residents' champion Nick Marks and I campaigned to get the bollards replaced. They're now back in place, and the walkway is safe for families again.</p>
+      </div>
+    </article>
+
+    <article class="story">
+      <figure class="story-img">
+        <img src="images/violet-hill-drain.jpg" alt="Nigel Moxon in a high-visibility vest in front of roadworks on Violet Hill" width="1600" height="1200" loading="lazy">
+        <figcaption>On Violet Hill during the sewer repairs, March 2023.</figcaption>
+      </figure>
+      <div class="story-text">
+        <span class="tag">Delivered</span>
+        <h3>Violet Hill reopened after sewer collapse</h3>
+        <p>In March 2023 a collapsed sewer opened a large sinkhole on Violet Hill, a key route linking the south of Mansfield with Forest Town and Mansfield Woodhouse. It shut the road northbound and caused traffic chaos.</p>
+        <p>Severn Trent initially wouldn't accept responsibility, so I stepped in, pressing them to take ownership and repair the sewer as quickly as possible. I kept residents updated throughout, and the road reopened on 1 April.</p>
+        <p class="press"><a href="https://www.chad.co.uk/news/transport/busy-mansfield-road-re-opens-after-huge-sink-hole-is-fixed-4089615" target="_blank" rel="noopener">Read the Chad's coverage</a></p>
+      </div>
+    </article>
+
+    <div class="groups">
+      <h3>Supporting local groups</h3>
+      <p>As County Councillor for Mansfield East, I used my divisional fund to back community groups doing great work locally.</p>
+      <ul class="grant-list">
+        <li>
+          <img src="images/st-albans-church-cheque-sm.jpg" alt="Members of St Albans Church holding a large cheque for one thousand pounds" width="760" height="537" loading="lazy">
+          <span class="amount">£1,000</span>
+          <b>St Albans Church, Forest Town</b>
+          <span>Supporting the church's community group.</span>
+        </li>
+        <li>
+          <img src="images/frenbot-cheque-2022-sm.jpg" alt="Footballers in blue kit with a five hundred pound cheque in front of a goal" width="760" height="570" loading="lazy">
+          <span class="amount">£500</span>
+          <b>Frenbot</b>
+          <span>Jointly with Cllr Rob Corden. Frenbot's annual celebrity football tournament raises money for local charities.</span>
+        </li>
+        <li>
+          <img src="images/men-in-sheds-sm.jpg" alt="Nigel Moxon with three men outside the Men in Sheds workshop" width="760" height="571" loading="lazy">
+          <span class="amount">Grant</span>
+          <b>Men in Sheds, Ransom Wood</b>
+          <span>Jointly with Cllrs Rob Corden and Andre Camilleri. Men in Sheds brings people together for practical projects, friendship and wellbeing.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="priorities">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">What I'm working on</p>
+      <h2>My priorities for Ling Forest</h2>
+    </div>
+    <div class="prio">
+      <div><h3>Safer streets</h3><p>Working with Nottinghamshire Police and residents to tackle anti-social behaviour, and pressing for better lighting where people feel unsafe.</p></div>
+      <div><h3>Safer school runs</h3><p>Working with Wynndale Primary, St Patrick's Catholic Primary, parents and residents to ease school-run traffic and parking.</p></div>
+      <div><h3>Roads and pavements</h3><p>Chasing potholes, broken pavements and utility works until they are put right, just as I did on Violet Hill.</p></div>
+      <div><h3>Cleaner and greener</h3><p>Tackling litter and fly-tipping, and protecting the woodland and green spaces that give Ling Forest its name.</p></div>
+      <div><h3>Local businesses</h3><p>Backing Mansfield's market, high street and small firms, which create jobs and keep our town centre alive.</p></div>
+      <div><h3>Value for your money</h3><p>I bring an accountant's eye to the council's budgets. Council tax is your money, and it should be spent as carefully as you would spend it.</p></div>
+    </div>
+    <div class="strip">
+      <figure>
+        <img src="images/wynndale-primary-sm.jpg" alt="Nigel Moxon outside Wynndale Primary School with daffodils" width="760" height="570" loading="lazy">
+        <figcaption>Outside Wynndale Primary School.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/st-patricks-primary-sm.jpg" alt="Nigel Moxon beside the St Patrick's Catholic Primary School sign" width="570" height="760" loading="lazy" style="object-position:50% 35%">
+        <figcaption>Outside St Patrick's Catholic Primary School.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/veolia-mrf-sm.jpg" alt="Three councillors in hard hats at the Veolia recycling facility" width="760" height="570" loading="lazy">
+        <figcaption>Visiting the Veolia recycling facility in Ling Forest Ward.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">About Nigel</p>
+      <h2>Mansfield born and bred</h2>
+    </div>
+    <div class="about">
+      <div class="about-text">
+        <p class="big">I was born at King's Mill Hospital and have lived in Mansfield all my life.</p>
+        <p>I went to St Peter's First School, St John's Middle School and The Brunts School, then studied in Nottingham before taking a degree in Accounting at the University of Derby. My mum and dad were both born and bred here too, and they've backed me every step of the way. My dad was still out campaigning with me at 87!</p>
+        <p>Today I'm a self-employed accountant. That background shapes how I approach the council's finances: every pound of council tax is residents' money, and it should be spent as carefully as your own.</p>
+        <p>On Mansfield District Council I represent Ling Forest Ward and serve as Leader of the Opposition, holding the council's leadership to account on behalf of residents. I also sit on the Planning Applications Committee, the Audit, Governance &amp; Standards Committee and the Place Scrutiny Committee.</p>
+      </div>
+      <figure class="about-fig">
+          <img src="images/campaigning-with-dad-2025.jpg" alt="Nigel Moxon taking a selfie with his father in a car park" width="1600" height="1200" loading="lazy">
+          <figcaption>Out campaigning with my dad, Michael Moxon, then 87, April 2025.</figcaption>
+      </figure>
+    </div>
+
+    <div class="record">
+      <div>
+        <h3>Experience</h3>
+        <p>Alongside my work on Mansfield District Council, from 2021 to 2025 I also served as a County Councillor on Nottinghamshire County Council, including almost two years as Deputy Cabinet Member for Education and SEND.</p>
+        <div class="pair">
+          <figure>
+            <img src="images/samuel-barlow-extension-sm.jpg" alt="Nigel Moxon, Scott Carlton and Sam Smith at Samuel Barlow Primary Academy" width="760" height="570" loading="lazy">
+            <figcaption>Opening Samuel Barlow Primary Academy's new extension, April 2024.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/virtual-school-sam-smith-sm.jpg" alt="Nigel Moxon and Sam Smith at a Nottinghamshire Virtual School event" width="570" height="760" loading="lazy" style="object-position:50% 30%">
+            <figcaption>With Cllr Sam Smith at a Nottinghamshire Virtual School event.</figcaption>
+          </figure>
         </div>
-    </section>
-    
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.facebook.com/CllrNigelMoxon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/nigelmoxon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-            <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#priorities">Priorities</a>
-                <a href="#social">Social Media</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <p>&copy; 2025 Nigel Moxon. All rights reserved.</p>
-            <p class="disclaimer">Promoted by and on behalf of Nigel Moxon, both at 5 Kilton Ave, Mansfield NG18 3GB.</p>
+      </div>
+      <ol class="timeline">
+        <li class="now"><time>Now</time><b>Leader of the Opposition</b><span>Mansfield District Council · Councillor for Ling Forest Ward</span></li>
+        <li class="now"><time>Now</time><b>Committee member</b><span>Planning Applications · Audit, Governance &amp; Standards · Place Scrutiny</span></li>
+        <li><time>2023 – 2025</time><b>Deputy Cabinet Member for Education &amp; SEND</b><span>Nottinghamshire County Council</span></li>
+        <li><time>2022 – 2023</time><b>Chair, Place Scrutiny Committee</b><span>Nottinghamshire County Council</span></li>
+        <li><time>2021 – 2022</time><b>Vice-Chair, Governance &amp; Ethics Committee</b><span>Nottinghamshire County Council</span></li>
+        <li><time>May 2021</time><b>Elected County Councillor for Mansfield East</b><span>Nottinghamshire County Council, 2021 – 2025</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Photos</p>
+      <h2>Out and about</h2>
+      <p>In the ward, on the campaign trail and at events across Nottinghamshire. Tap a photo to see it full size.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter photos">
+      <button type="button" data-cat="all" aria-pressed="true">All</button>
+      <button type="button" data-cat="ward" aria-pressed="false">Ling Forest</button>
+      <button type="button" data-cat="county" aria-pressed="false">County Council</button>
+      <button type="button" data-cat="campaign" aria-pressed="false">Campaigning</button>
+      <button type="button" data-cat="about" aria-pressed="false">Out and about</button>
+    </div>
+    <div class="grid" id="grid">
+      <button type="button" class="feat" data-cat="campaign" data-full="images/kemi-badenoch-2025.jpg" data-caption="Campaigning in Mansfield East with the Leader of the Opposition, Rt Hon Kemi Badenoch MP, and Rob Corden, my fellow County Councillor for Mansfield East, April 2025."><img src="images/kemi-badenoch-2025-sm.jpg" alt="Nigel Moxon, Kemi Badenoch and Rob Corden holding Conservative campaign signs under a blossom tree" width="760" height="570" loading="lazy"><span>With Kemi Badenoch in Mansfield East</span></button>
+      <button type="button" data-cat="ward" data-full="images/oak-tree-bollards-2025.jpg" data-caption="With residents&#x27; champion Nick Marks at the new bollards on the Oak Tree Estate, installed after we campaigned for them, spring 2025."><img src="images/oak-tree-bollards-2025-sm.jpg" alt="Nigel Moxon and Nick Marks standing beside new concrete bollards on a paved walkway" width="760" height="570" loading="lazy"><span>New bollards on the Oak Tree Estate</span></button>
+      <button type="button" data-cat="ward" data-full="images/violet-hill-drain.jpg" data-caption="On Violet Hill during the repairs to the collapsed sewer, March 2023."><img src="images/violet-hill-drain-sm.jpg" alt="Nigel Moxon in a high-visibility vest in front of roadworks on Violet Hill" width="760" height="570" loading="lazy"><span>Violet Hill sewer repairs</span></button>
+      <button type="button" data-cat="ward" data-full="images/veolia-mrf.jpg" data-caption="With Cllr Mike Introna, Conservative spokesman for Transport and the Environment on Nottinghamshire County Council, and Cllr Sinead Anderson, visiting the Veolia Materials Recovery Facility in Ling Forest Ward."><img src="images/veolia-mrf-sm.jpg" alt="Mike Introna, Sinead Anderson and Nigel Moxon in hard hats and hi-vis vests at the Veolia site" width="760" height="570" loading="lazy"><span>Veolia recycling facility visit</span></button>
+      <button type="button" data-cat="ward" data-full="images/wynndale-primary.jpg" data-caption="Outside Wynndale Primary School in Ling Forest Ward."><img src="images/wynndale-primary-sm.jpg" alt="Nigel Moxon outside Wynndale Primary School with daffodils in the foreground" width="760" height="570" loading="lazy"><span>Wynndale Primary School</span></button>
+      <button type="button" data-cat="ward" data-full="images/st-patricks-primary.jpg" data-caption="Outside St Patrick&#x27;s Catholic Primary School in Ling Forest Ward."><img src="images/st-patricks-primary-sm.jpg" alt="Nigel Moxon standing beside the St Patrick&#x27;s Catholic Primary School sign" width="570" height="760" loading="lazy"><span>St Patrick&#x27;s Catholic Primary</span></button>
+      <button type="button" data-cat="county" data-full="images/samuel-barlow-extension.jpg" data-caption="At the official opening of Samuel Barlow Primary Academy&#x27;s new £3 million extension, part-funded by £1.3 million through Nottinghamshire County Council, with Cllr Scott Carlton and Cllr Sam Smith, April 2024."><img src="images/samuel-barlow-extension-sm.jpg" alt="Nigel Moxon, Scott Carlton and Sam Smith beside balloons at Samuel Barlow Primary Academy" width="760" height="570" loading="lazy"><span>Samuel Barlow extension opening</span></button>
+      <button type="button" data-cat="county" data-full="images/virtual-school-sam-smith.jpg" data-caption="With Cllr Sam Smith, now Conservative Leader of the Opposition at Nottinghamshire County Council, at a Nottinghamshire Virtual School event during my time as Deputy Cabinet Member for Education and SEND."><img src="images/virtual-school-sam-smith-sm.jpg" alt="Nigel Moxon and Sam Smith holding a giant social media frame at a Virtual School event" width="570" height="760" loading="lazy"><span>Nottinghamshire Virtual School event</span></button>
+      <button type="button" data-cat="county" data-full="images/rainworth-bypass-2024.jpg" data-caption="Viewing the Rainworth Bypass roadworks with Cllr Tom Smith, September 2024."><img src="images/rainworth-bypass-2024-sm.jpg" alt="Nigel Moxon and Tom Smith leaning on a barrier by the Rainworth Bypass" width="760" height="570" loading="lazy"><span>Rainworth Bypass roadworks</span></button>
+      <button type="button" data-cat="county" data-full="images/st-albans-church-cheque.jpg" data-caption="Presenting £1,000 from my County Council divisional fund to St Albans Church, Forest Town."><img src="images/st-albans-church-cheque-sm.jpg" alt="Members of St Albans Church holding a large Nottinghamshire County Council cheque for one thousand pounds" width="760" height="537" loading="lazy"><span>£1,000 for St Albans Church</span></button>
+      <button type="button" data-cat="county" data-full="images/men-in-sheds.jpg" data-caption="At Men in Sheds, Ransom Wood, with organiser Dennis Owen and Cllr Andre Camilleri."><img src="images/men-in-sheds-sm.jpg" alt="Nigel Moxon taking a selfie with three men outside the Men in Sheds workshop" width="760" height="571" loading="lazy"><span>Men in Sheds, Ransom Wood</span></button>
+      <button type="button" data-cat="county" data-full="images/frenbot-cheque-2022.jpg" data-caption="Presenting £500 to Frenbot, whose annual celebrity football tournament raises money for local charities, jointly with Cllr Rob Corden, August 2022."><img src="images/frenbot-cheque-2022-sm.jpg" alt="Footballers in blue kit with Nigel Moxon and Rob Corden holding a five hundred pound cheque in front of a goal" width="760" height="570" loading="lazy"><span>£500 for Frenbot</span></button>
+      <button type="button" data-cat="county" data-full="images/nottinghamshire-day-2024.jpg" data-caption="Celebrating Nottinghamshire Day 2024 by the River Trent with fellow Conservative councillors (left to right): Neil Clarke, Richard Butler, Johno Lee, Roger Upton, Scott Carlton, Jonathan Wheeler, John Ogle, me, and Keith Girling."><img src="images/nottinghamshire-day-2024-sm.jpg" alt="Nine Conservative councillors holding the Nottinghamshire flag beside the River Trent" width="760" height="570" loading="lazy"><span>Nottinghamshire Day 2024</span></button>
+      <button type="button" data-cat="campaign" data-full="images/campaign-2025.jpg" data-caption="Out campaigning in Mansfield East with Michael Harper, May 2025."><img src="images/campaign-2025-sm.jpg" alt="Nigel Moxon and Michael Harper holding a Councillor Nigel Moxon campaign sign" width="760" height="570" loading="lazy"><span>Out in Mansfield East</span></button>
+      <button type="button" data-cat="campaign" data-full="images/campaigning-with-dad-2025.jpg" data-caption="Out campaigning with my dad, Michael Moxon, then 87, April 2025. Keeping it in the family!"><img src="images/campaigning-with-dad-2025-sm.jpg" alt="Nigel Moxon taking a selfie with his father in a car park" width="760" height="570" loading="lazy"><span>Campaigning with my dad</span></button>
+      <button type="button" data-cat="campaign" data-full="images/uxbridge-2023.jpg" data-caption="Campaigning in Uxbridge with Steve Tuckwell during the 2023 by-election."><img src="images/uxbridge-2023-sm.jpg" alt="Nigel Moxon with Steve Tuckwell and a campaigner outside a railway station" width="760" height="570" loading="lazy"><span>Uxbridge by-election</span></button>
+      <button type="button" data-cat="about" data-full="images/mansfield-day-2023.jpg" data-caption="With fellow Conservative councillors Liz Langrick, Sinead Anderson and Andre Camilleri at Mansfield Day, August 2023."><img src="images/mansfield-day-2023-sm.jpg" alt="Four Conservative councillors in Mansfield Market Place, two holding green Robin Hood hats" width="760" height="570" loading="lazy"><span>Mansfield Day 2023</span></button>
+      <button type="button" data-cat="about" data-full="images/downing-street-no10.jpg" data-caption="Outside 10 Downing Street on a visit to meet the then Prime Minister, Rishi Sunak, summer 2023."><img src="images/downing-street-no10-sm.jpg" alt="Nigel Moxon standing in front of the door of 10 Downing Street" width="481" height="640" loading="lazy"><span>Outside No. 10</span></button>
+      <button type="button" data-cat="about" data-full="images/downing-street-neil-clarke.jpg" data-caption="Inside Downing Street with Cllr Neil Clarke, Leader of Rushcliffe Borough Council, summer 2023."><img src="images/downing-street-neil-clarke-sm.jpg" alt="Nigel Moxon shaking hands with Neil Clarke in a room with Union flags" width="760" height="505" loading="lazy"><span>Inside Downing Street</span></button>
+      <button type="button" data-cat="about" data-full="images/buckingham-palace-2024.jpg" data-caption="At a Buckingham Palace Garden Party with my sister, Sarah, invited in recognition of my work as a councillor, May 2024."><img src="images/buckingham-palace-2024-sm.jpg" alt="Nigel Moxon and his sister Sarah in formal dress at Buckingham Palace" width="570" height="760" loading="lazy"><span>Buckingham Palace Garden Party</span></button>
+      <button type="button" data-cat="about" data-full="images/mansfield-library-dalek.jpg" data-caption="Meeting a Dalek at Mansfield Library with Cllr Andre Camilleri and Cllr Sinead Anderson."><img src="images/mansfield-library-dalek-sm.jpg" alt="Nigel Moxon, Andre Camilleri and Sinead Anderson posing with a bronze Dalek in a library" width="760" height="570" loading="lazy"><span>A Dalek at Mansfield Library</span></button>
+      <button type="button" data-cat="about" data-full="images/charity-cricket-2024.jpg" data-caption="Playing in the Breeze Corporate Finance charity cricket match with Cllr Nigel Turner, cheered on by Cllr Mike Adams and Cllr Sam Smith, July 2024."><img src="images/charity-cricket-2024-sm.jpg" alt="Four men in the sun at a cricket ground, Nigel Moxon in cricket whites" width="760" height="570" loading="lazy"><span>Charity cricket, July 2024</span></button>
+      <button type="button" data-cat="about" data-full="images/cricket-award-2024.jpg" data-caption="Still got it! Named Competition Strike Bowler at the charity match, more than 10 years after hanging up my boots."><img src="images/cricket-award-2024-sm.jpg" alt="Nigel Moxon grinning while holding a framed signed Notts cricket shirt and an award certificate" width="570" height="760" loading="lazy"><span>Competition Strike Bowler</span></button>
+      <button type="button" data-cat="about" data-full="images/christmas-edwina-currie.jpg" data-caption="At a Christmas event with Cllr Sinead Anderson, former Health Minister Edwina Currie and Cllr Andre Camilleri, December 2023."><img src="images/christmas-edwina-currie-sm.jpg" alt="Nigel Moxon in a Christmas jumper with Sinead Anderson, Edwina Currie and Andre Camilleri" width="760" height="570" loading="lazy"><span>Christmas with Edwina Currie</span></button>
+      <button type="button" data-cat="about" data-full="images/christmas-2025-catchup.jpg" data-caption="Catching up with Cllr Sam Smith, Leader of the Opposition at Nottinghamshire County Council, Cllr Sinead Anderson and Tracey Taylor, former Cabinet Member for Children &amp; Families, Christmas 2025."><img src="images/christmas-2025-catchup-sm.jpg" alt="Nigel Moxon at a pub table with Sam Smith, Tracey Taylor and Sinead Anderson" width="480" height="360" loading="lazy"><span>Christmas catch-up, 2025</span></button>
+    </div>
+  </div>
+</section>
+
+<section id="news">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Latest news</p>
+      <h2>What I've been up to</h2>
+      <p>My latest updates from Facebook and X appear here automatically.</p>
+    </div>
+    <div class="feeds">
+      <div class="feed">
+        <h3>Facebook</h3>
+        <iframe title="Cllr Nigel Moxon on Facebook" loading="lazy" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCllrNigelMoxon&amp;tabs=timeline&amp;width=500&amp;height=620&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=false" allow="encrypted-media"></iframe>
+        <a class="btn btn-line follow" href="https://www.facebook.com/CllrNigelMoxon" target="_blank" rel="noopener">Follow on Facebook</a>
+      </div>
+      <div class="feed">
+        <h3>X (Twitter)</h3>
+        <div class="xfeed"><a class="twitter-timeline" data-height="620" data-dnt="true" href="https://twitter.com/nigelmoxon">Posts by @nigelmoxon</a></div>
+        <p class="note">If my posts don't load here, you can read them on X.</p>
+        <a class="btn btn-line follow" href="https://x.com/nigelmoxon" target="_blank" rel="noopener">Follow @nigelmoxon on X</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tory">
+  <div class="wrap">
+    <img src="Conservatives_logo.svg" alt="" onerror="this.remove()">
+    <div>
+      <p class="tory-h">Mansfield Conservatives</p>
+      <p>Value for money, safer streets and a council that delivers for local people. Help us make it happen in Mansfield.</p>
+    </div>
+    <a class="btn tory-btn" href="https://www.conservatives.com/join" target="_blank" rel="noopener">Join the Conservatives</a>
+  </div>
+</div>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <div class="head" style="margin-bottom:0">
+          <p class="eyebrow">Get in touch</p>
+          <h2>Got an issue in Ling Forest?</h2>
+          <p>I'm always happy to hear from residents. Contact me about anything affecting you or your street, for example:</p>
         </div>
-    </footer>
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
-    <!-- Facebook SDK -->
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0" nonce="YOUR_NONCE_VALUE"></script>
-    
-    <!-- Twitter Widgets -->
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <ul>
+          <li>Potholes, pavements and street lighting</li>
+          <li>Fly-tipping, litter and bins</li>
+          <li>Anti-social behaviour</li>
+          <li>Planning applications near you</li>
+          <li>School-run traffic and parking</li>
+        </ul>
+        <p style="margin-top:18px;color:var(--muted)">For council services, visit the <a href="https://www.mansfield.gov.uk" target="_blank" rel="noopener">Mansfield District Council website</a>.</p>
+      </div>
+      <div class="contact-card">
+        <dl>
+          <div><dt>Phone</dt><dd><a href="tel:+447869151058">07869 151058</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:nmoxon@mansfield.gov.uk">nmoxon@mansfield.gov.uk</a></dd></div>
+          <div><dt>Facebook</dt><dd><a href="https://www.facebook.com/CllrNigelMoxon" target="_blank" rel="noopener">CllrNigelMoxon</a></dd></div>
+          <div><dt>X</dt><dd><a href="https://x.com/nigelmoxon" target="_blank" rel="noopener">@nigelmoxon</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="foot-logo" src="Conservatives_logo.svg" alt="Conservatives" onerror="this.remove()">
+    <nav aria-label="Footer">
+      <a href="#delivered">Delivered</a><a href="#priorities">Priorities</a><a href="#about">About</a><a href="#gallery">Photos</a><a href="#news">News</a><a href="#contact">Contact</a>
+      <a href="https://www.gov.uk/register-to-vote" target="_blank" rel="noopener">Register to vote</a>
+    </nav>
+    <p>© 2026 Nigel Moxon. All rights reserved.</p>
+    <p class="imprint">Promoted by and on behalf of Nigel Moxon, both at 5 Kilton Ave, Mansfield NG18 3GB.</p>
+  </div>
+</footer>
+
+<dialog class="lb" id="lb" aria-label="Photo viewer">
+  <div class="lb-bar">
+    <button type="button" id="lb-prev" aria-label="Previous photo">← Prev</button>
+    <button type="button" id="lb-next" aria-label="Next photo">Next →</button>
+    <button type="button" id="lb-close">Close</button>
+  </div>
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+</dialog>
+
+<script>
+(function(){
+  var grid=document.getElementById('grid');
+  var items=[].slice.call(grid.querySelectorAll('button'));
+  var filters=[].slice.call(document.querySelectorAll('.filters button'));
+  filters.forEach(function(b){b.addEventListener('click',function(){
+    var c=b.dataset.cat;
+    filters.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    items.forEach(function(i){i.hidden=!(c==='all'||i.dataset.cat===c)});
+    grid.classList.toggle('filtered',c!=='all');
+  })});
+  var lb=document.getElementById('lb'),img=document.getElementById('lb-img'),cap=document.getElementById('lb-cap'),cur=0;
+  function visible(){return items.filter(function(i){return !i.hidden})}
+  function show(btn){img.src=btn.dataset.full;img.alt=btn.querySelector('img').alt;cap.textContent=btn.dataset.caption;cur=visible().indexOf(btn)}
+  function step(d){var v=visible();if(!v.length)return;cur=(cur+d+v.length)%v.length;show(v[cur])}
+  items.forEach(function(btn){btn.addEventListener('click',function(){show(btn);if(lb.showModal){lb.showModal()}else{lb.setAttribute('open','')}})});
+  document.getElementById('lb-prev').onclick=function(){step(-1)};
+  document.getElementById('lb-next').onclick=function(){step(1)};
+  document.getElementById('lb-close').onclick=function(){lb.close()};
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.close()});
+  document.addEventListener('keydown',function(e){if(!lb.open)return;if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)});
+})();
+</script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 </body>
 </html>
